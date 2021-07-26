@@ -1,0 +1,18 @@
+
+Public Function my_portfolio_return(return_vector, weight_vector)
+    If Application.Count(return_vector) = Application.Count(weight_vector) Then
+        If return_vector.Columns.Count <> weight_vector.Columns.Count Then
+            weight_vector = Application.Transpose(weight_vector)
+        Else
+            weight_vector = weight_vector
+        End If
+        my_portfolio_return = Application.SumProduct(return_vector, weight_vector)
+
+    Else
+        my_portfolio_return = "No way!!!!I am not going to calculate that!!!"
+    End If
+    
+        
+End Function
+
+
